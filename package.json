@@ -1,13 +1,11 @@
 {
   "name": "ipscan",
-  "version": "1.0.0",
-  "description": "IP Scanner mit Vue.js und Electron",
+  "version": "1.0.1",
+  "description": "IP Scanner using vue.js and electron",
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "./scripts/run-dev.sh",
-    "build": "./scripts/run-build.sh",
-    "build:cross": "./scripts/run-build-cross.sh",
-    "dist": "electron-builder",
+    "build": "./scripts/run-build-cross.sh",
     "build:electron": "node build.js",
     "vite": "vite"
   },

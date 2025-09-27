@@ -1,6 +1,7 @@
 {
-  "appId": "com.ipscanner.app",
+  "appId": "de.tino-kuptz.ip-scanner",
   "productName": "IP Scanner",
+  "artifactName": "ip-scanner-${version}_${os}-${arch}.${ext}",
   "directories": {
     "output": "release"
   },
@@ -15,7 +16,11 @@
     "target": [
       {
         "target": "zip",
-        "arch": ["x64", "arm64"]
+        "arch": ["arm64"]
+      },
+      {
+        "target": "zip",
+        "arch": ["x64"]
       }
     ],
     "identity": null,
@@ -24,8 +29,12 @@
   "win": {
     "target": [
       {
-        "target": "nsis",
-        "arch": ["x64", "arm64"]
+        "target": "portable",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["arm64"]
       }
     ]
   },
