@@ -30,6 +30,7 @@ export class NetworkScanner extends EventEmitter {
         }
 
         const batch = ipRange.slice(i, i + batchSize)
+        var thisLoopDoneCount = 0;
         const batchPromises = batch.map(async (ip) => {
           const host = new ScannedHost(ip)
 
@@ -45,10 +46,12 @@ export class NetworkScanner extends EventEmitter {
             console.error(`Error scanning ${ip}:`, error)
           }
 
+          thisLoopDoneCount++;
+
           this.emit('scan-progress', {
-            current: completedCount,
+            current: completedCount + thisLoopDoneCount,
             total: ipRange.length,
-            currentIp: batch[batch.length - 1] // Letzte IP im Batch
+            currentIp: ip
           })
         })
 
