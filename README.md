@@ -1,38 +1,38 @@
 # IP Scanner
 
-Schneller Netzwerkscanner inkl. Portscanner. Läuft dank Electron (theoretisch) auf Windows, macOS und Linux
+Fast network scanner including port scanner. Runs on Windows, macOS and Linux thanks to Electron (theoretically)
 
 <img src="readme/screenshot-range.png" width="45%"></img> <img src="readme/screenshot-subnet.png" width="45%"></img> 
 
 ## Features
 
-- **IP-Bereich-Scanning**: Scannen von IP X bis IP Y (bspw. `192.168.120.10` bis `192.168.120.55`)
-- **Subnetz-Scanning**: Allternativ: scannen ganzer Subnetze mit Subnetzmaske<br>(bspw. `192.168.120.0` mit `255.255.255.0`)
-- **Port-Scanning**: Angabe einer kommagetrennten Liste mit TCP-Ports, die geprüft werden sollen
-- **Schnelles Filtern in der App**: Anzeige von allen Hosts, Hosts mit mind. einem offenem Port, oder Hosts die generell online sind
-- **Hostname und MAC**: damit man nicht mehr unter MacOS zwei verschiedene Scanner nutzen muss, um beide Infos zu haben
+- **IP Range Scanning**: Scan from IP X to IP Y (e.g. `192.168.120.10` to `192.168.120.55`)
+- **Subnet Scanning**: Alternatively: scan entire subnets with subnet mask<br>(e.g. `192.168.120.0` with `255.255.255.0`)
+- **Port Scanning**: Specify a comma-separated list of TCP ports to be checked
+- **Fast Filtering in the App**: Display all hosts, hosts with at least one open port, or hosts that are generally online
+- **Hostname and MAC**: so you don't have to use two different scanners on macOS to get both pieces of information
 
-## Technologie-Stack
+## Technology Stack
 
-- **Frontend**: Vue.js 3 mit TypeScript
-- **Backend**: Electron mit Node.js
-- **Styling**: Modernes CSS mit Gradients und Animationen
-- **Build-Tool**: Vite für schnelle Entwicklung
+- **Frontend**: Vue.js 3 with TypeScript
+- **Backend**: Electron with Node.js
+- **Styling**: Modern CSS with gradients and animations
+- **Build Tool**: Vite for fast development
 
 ## Installation
-Wird vermutlich nur unter MacOS, mit Glück aber auch unter Linux klappen.
+Will probably only work on macOS, but with luck also on Linux.
 
-1. **Abhängigkeiten installieren**:
+1. **Install dependencies**:
 ```bash
 npm install
 ```
 
-2. **Entwicklungsserver starten**:
+2. **Start development server**:
 ```bash
 npm run dev
 ```
 
-3. **Produktions-Build erstellen**:
+3. **Create production build**:
 set `SKIP_SIGNING=true` so you don't need to sign this application.  
 Otherwise you need to install some requirements:
 ```bash
@@ -49,21 +49,21 @@ After installing all required things (or setting the env var), you may run
 npm run build
 ```
 
-## Architektur
+## Architecture
 
 ### Frontend (Vue.js)
-Findet sich im Verzeichnis `/src`
+Located in the `/src` directory
 
 ### Backend (Electron)
-Findet sich im Verzeichnis `/electron`
+Located in the `/electron` directory
 
 ### Scripts
-Aktuell nur zwei relevante:
-- `npm run dev`: Baut Electron, startet Vite, und öffnet dann Electron auf `http://localhost:5173`
-- `npm run build`: Baut die gesamte Anwendung für die aktuelle Architektur
-- `npm run build:cross`: Baut die gesamte Anwendung für die alle Architekturen
+Currently only two relevant ones:
+- `npm run dev`: Builds Electron, starts Vite, and then opens Electron on `http://localhost:5173`
+- `npm run build`: Builds the entire application for the current architecture
+- `npm run build:cross`: Builds the entire application for all architectures
 
-Wichtiger Hinweis zu `npm run dev` - das Frontend unterstützt dank Vite hot reloading, das Backend nicht. Das war mir zu viel Aufwand in der Entwicklung, wenn die Alternative bei Backend-Änderungen einfach STRG+C, Pfeiltaste nach oben und Enter ist.
+Important note about `npm run dev` - the frontend supports hot reloading thanks to Vite, the backend does not. That was too much effort for me during development, when the alternative for backend changes is simply CTRL+C, arrow key up and Enter.
 
 ### Pull requests
-Sind gerne gesehen
+Are welcome
