@@ -265,9 +265,9 @@ async function signWindows(configuration) {
 
     // Only sign specific files to avoid double signing
     const shouldSignFile = fileName.endsWith('.exe') && (
-        fileName.includes('Advanced MTR') ||
-        fileName.includes('advanced-mtr') ||
-        fileName === 'Advanced MTR.exe'
+        fileName.includes('IP Scanner') ||
+        fileName.includes('ip-scanner') ||
+        fileName === 'IP Scanner.exe'
     );
 
     if (!shouldSignFile) {
