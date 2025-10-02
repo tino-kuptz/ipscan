@@ -27,7 +27,6 @@
     "sign": "./scripts/sign.js"
   },
   "win": {
-    "icon": "readme/icon.ico",
     "target": [
       {
         "target": "portable",
